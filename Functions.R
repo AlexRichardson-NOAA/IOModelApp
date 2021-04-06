@@ -1,47 +1,45 @@
 
 ###########PACKAGES###################
-library(devtools)
+list_of_packages = c(# Essential
+                     "shiny", 
+                     "devtools", 
+                     
+                     # Design
+                     "shinydashboard", 
+                     "shinythemes", 
+                     # devtools::install_github("paulc91/shinyauthr")
+                     "shinyauthr", 
+                     "shinycssloaders", 
+                     
+                     # Shiny v. Javascript
+                     "shinyjs",
+                     "shinyBS",
+                     "V8",
+                     
+                     # Utilities
+                     "magrittr", 
+                     "readr", 
+                     "readxl", 
+                     "dplyr", 
+                     "DT", 
+                     "writexl", 
+                     "here",
+                     "tidyr",
+                     "glue",
+                     "ggplot2",
+                     "extrafont",
+                     # loadfonts()
+                     # extrafont::font_import()
+                     #windowsFonts()
+                     "knitr",
+                     "markdown", #https://stackoverflow.com/questions/33499651/rmarkdown-in-shiny-application
+                     
+                     #Obtaining Data
+                     "fredr" 
+                     #"iocalculator"
+)
 
-# Need for running Shiny apps
-library(shiny)
-
-# Design
-library(shinydashboard)
-library(shinythemes)
-# devtools::install_github("paulc91/shinyauthr")
-library(shinyauthr)
-
-# Use Java Script
-library(shinyjs)
-library(shinyBS)
-require(V8)
-
-# For table formatting
-library(DT)
-library(kableExtra)
-library(formattable)
-
-#Piping/operators which promote semantics
-library(magrittr)
-library(dplyr)
-library(tidyr)
-library(tidyverse)
-library(glue)
-
-#Plotting
-library(ggplot2)
-
-#RMarkdown documents for reports 
-library(knitr)
-library(markdown) # #https://stackoverflow.com/questions/33499651/rmarkdown-in-shiny-application
-
-
-# install.packages("extrafont")
-library(extrafont)
-# loadfonts()
-# extrafont::font_import()
-#windowsFonts()
-
+lapply(list_of_packages, function(x) if(!require(x,character.only = TRUE)) install.packages(x))
 
 
 licence0 <- "Software code created by U.S. Government employees is not subject to copyright in the United States (17 U.S.C. §105). The United States/Department of Commerce reserve all rights to seek and obtain copyright protection in countries other than the United States for Software authored in its entirety by the Department of Commerce. To this end, the Department of Commerce hereby grants to Recipient a royalty-free, nonexclusive license to use, copy, and create derivative works of the Software outside of the United States."
