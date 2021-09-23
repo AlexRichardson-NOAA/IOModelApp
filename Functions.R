@@ -35,8 +35,9 @@ list_of_packages = c(# Essential
                      "markdown", #https://stackoverflow.com/questions/33499651/rmarkdown-in-shiny-application
                      
                      #Obtaining Data
-                     "fredr" 
-                     #"iocalculator"
+                     "fredr",
+                     "feusIO"
+                     #devtools::install_github("AlexRichardson-NOAA/feusIO)
 )
 
 lapply(list_of_packages, function(x) if(!require(x,character.only = TRUE)) install.packages(x))

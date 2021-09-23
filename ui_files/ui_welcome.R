@@ -12,19 +12,15 @@ ui.welcome <- function() {
     fluidRow(
       HTML("<html lang='en'>"), #Always have this as your first line
       
-      h1("First level title"),
-      h2("Second level title"),
-    
+      h1("Welcome"),
+
       column(
       
         width = 12,
-        tags$p(glue("Your permission level is: {user_info()$permissions}. 
-                       Your data is: {ifelse(user_info()$permissions == 'admin', 'Starwars', 'Storms')}.")),
-        box(width = NULL, status = "primary",
-            title = ifelse(user_info()$permissions == 'admin', "Starwars Data", "Storms Data"),
-            DT::renderDT(user_data(), options = list(scrollX = TRUE))
+        tags$p(glue("Welcome to the NOAA Marine Fisheries Science Center Input/Output Modell app for estimating the economic impact of state and national fish harvests.
+                    To get started, click the button below. You must have the required priors file to use this model. An optional catch dataset may also be applied.")),
+        actionButton("get_started", "Get Started")
         )
       )
     )
-  )
 }
